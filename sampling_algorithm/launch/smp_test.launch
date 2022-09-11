@@ -1,0 +1,16 @@
+<launch>
+
+  <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch"/>
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-f velodyne"/>  
+
+  <node pkg="sampling_algorithm" type="sampling" name="sampling_node" output="screen">
+
+    <param name="voxel_size_x" value="0.03"/>
+    <param name="voxel_size_x" value="0.03"/>
+    <param name="voxel_size_x" value="0.07"/>
+
+    <param name="upsamplingStepSize" value="0.1"/>
+  </node>
+
+</launch>
